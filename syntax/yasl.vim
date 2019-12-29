@@ -6,37 +6,35 @@ endif
 "echom "Loaded YASL syntax highlighting"
 let b:current_syntax = "yasl"
 
-syntax keyword yaslKeyword break const continue else elseif enum fn for if in
-syntax keyword yaslKeyword echo return while
+syntax keyword yaslKeyword break const continue echo else
+syntax keyword yaslKeyword elseif fn for if let return while
 syntax keyword yaslConstant false true undef
 
-syntax keyword yaslFunction open popen input
-
+syntax keyword yaslFunction io math require
 
 syntax match yaslString "\v'[^']*'"
+syntax match yaslString "\v`[^`]*`"
 syntax match yaslNumber "\v[0-9]+(\.[0-9]+)?"
 syntax match yaslNumber "\v0x[0-9a-fA-F]+"
 syntax match yaslNumber "\v0b[01]+"
 
 syntax keyword yaslOperator len
 syntax match yaslOperator "\v\."
+syntax match yaslOperator "\v-\>"
 syntax match yaslOperator "\v\*\*\=?"
 syntax match yaslOperator "\v\+\=?"
 syntax match yaslOperator "\v-\=?"
 syntax match yaslOperator "\v!\=?\=?"
 syntax match yaslOperator "\v\^\=?"
 syntax match yaslOperator "\v\*\=?"
-syntax match yaslOperator "\v/\=?"
-syntax match yaslOperator "\v//\=?"
+syntax match yaslOperator "\v//?\=?"
 syntax match yaslOperator "\v\%\=?"
-syntax match yaslOperator "\v\>\>\=?"
-syntax match yaslOperator "\v\<\<\=?"
+syntax match yaslOperator "\v\>\>?\=?"
+syntax match yaslOperator "\v\<\<?\=?"
 syntax match yaslOperator "\v\&\&?\=?"
 syntax match yaslOperator "\v\&\^\=?"
 syntax match yaslOperator "\v\|\|?\=?"
 syntax match yaslOperator "\v\~\=?"
-syntax match yaslOperator "\v\<\=?"
-syntax match yaslOperator "\v\>\=?"
 syntax match yaslOperator "\v\?"
 syntax match yaslOperator "\v:"
 syntax match yaslOperator "\v\?\?\=?"

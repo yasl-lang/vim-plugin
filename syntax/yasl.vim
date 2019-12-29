@@ -14,6 +14,7 @@ syntax keyword yaslFunction io math require
 
 syntax match yaslString "\v'[^']*'"
 syntax match yaslString "\v`[^`]*`"
+syntax match yaslString "\v\"[^\"]*\""
 syntax match yaslNumber "\v[0-9]+(\.[0-9]+)?"
 syntax match yaslNumber "\v0x[0-9a-fA-F]+"
 syntax match yaslNumber "\v0b[01]+"

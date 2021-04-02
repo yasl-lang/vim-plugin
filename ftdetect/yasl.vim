@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.ysl,*.yasl setfiletype yasl
+autocmd BufNewFile,BufRead *.yasl setfiletype yasl

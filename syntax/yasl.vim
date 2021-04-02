@@ -1,16 +1,18 @@
-"echom "About to load YASL syntax highlighting"
 if exists("b:current_syntax")
     finish
 endif
 
-"echom "Loaded YASL syntax highlighting"
 let b:current_syntax = "yasl"
 
-syntax keyword yaslKeyword break const continue echo else
-syntax keyword yaslKeyword elseif fn for if let return while
+syntax keyword yaslKeyword assert break const continue echo else elseif
+syntax keyword yaslKeyword export fn for if let match return while
 syntax keyword yaslConstant false true undef
 
-syntax keyword yaslFunction io math require
+syntax keyword yaslDisallowed header global enum struct pragma yield do
+syntax keyword yaslDisallowed ifdef elseifdef use no pure consteval
+syntax keyword yaslDisallowed constexpr constfold extern in typename
+
+syntax keyword yaslFunction collections io math mt require __require_c__
 
 syntax match yaslString "\v'[^']*'"
 syntax match yaslString "\v`[^`]*`"
@@ -51,3 +53,4 @@ highlight link yaslFunction Function
 highlight link yaslComment Comment
 highlight link yaslString String
 highlight link yaslNumber Number
+highlight link yaslDisallowed Error
